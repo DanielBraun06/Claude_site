@@ -1,0 +1,3 @@
+
+# Local Claude Code settings (installed hooks, machine-specific)
+.claude/settings.local.json
