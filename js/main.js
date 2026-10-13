@@ -1,5 +1,5 @@
 // Єдине місце, де міняється посилання для запису (Telegram, Instagram або форма).
-const BOOKING_URL = "https://t.me/REPLACE_WITH_YOUR_USERNAME";
+const BOOKING_URL = "https://t.me/dan_chess";
 
 document.documentElement.classList.add("js");
 
@@ -51,19 +51,28 @@ if ("IntersectionObserver" in window) {
   items.forEach((el) => el.classList.add("is-in"));
 }
 
-// Відгуки: рендер з js/reviews-data.js
+// Відгуки: орбіта навколо фото і сітка, обидва з js/reviews-data.js
 const grid = document.getElementById("reviews-grid");
-if (grid && Array.isArray(window.REVIEWS)) {
+const orbit = document.getElementById("orbit");
+if (Array.isArray(window.REVIEWS)) {
   const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-  grid.innerHTML = window.REVIEWS.map((r) => `
-    <article class="review reveal${r.placeholder ? " review--ph" : ""}">
-      ${r.placeholder ? '<span class="review__tag">Приклад: заміни справжнім відгуком</span>' : ""}
-      ${r.image ? `<div class="review__img"><img src="${esc(r.image)}" alt="Відгук від ${esc(r.name)}" loading="lazy"></div>` : ""}
-      ${r.text ? `<p class="review__q">${esc(r.text)}</p>` : ""}
-      <div class="review__who">
-        <span class="review__name">${esc(r.name)}</span>
-        ${r.meta ? `<span class="review__meta">${esc(r.meta)}</span>` : ""}
-      </div>
-    </article>`).join("");
-  grid.querySelectorAll(".reveal").forEach((el) => el.classList.add("is-in"));
+  const withImg = window.REVIEWS.filter((r) => r.image);
+
+  if (orbit) {
+    orbit.innerHTML = withImg.map((r, i) => `
+      <div class="orbit__item" style="--i:${i};--n:${withImg.length}">
+        <div class="orbit__card"><img src="${esc(r.image)}" alt="" loading="lazy"></div>
+      </div>`).join("");
+  }
+
+  if (grid) {
+    grid.innerHTML = window.REVIEWS.map((r) => `
+      <article class="review reveal is-in">
+        ${r.image ? `<div class="review__img"><img src="${esc(r.image)}" alt="Відгук від ${esc(r.name)}: ${esc(r.text)}" loading="lazy"></div>` : `<p class="review__q">${esc(r.text)}</p>`}
+        <div class="review__who">
+          <span class="review__name">${esc(r.name)}</span>
+          ${r.meta ? `<span class="review__meta">${esc(r.meta)}</span>` : ""}
+        </div>
+      </article>`).join("");
+  }
 }

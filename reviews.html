@@ -30,8 +30,12 @@
 
   <main id="main">
 
-    <section class="hero hero--sub" aria-labelledby="rev-title">
+    <section class="hero hero--sub hero--orbit" aria-labelledby="rev-title">
       <div class="hero__word" aria-hidden="true">PROSTOCHESS</div>
+      <div class="hero__figure" aria-hidden="true">
+        <img class="hero__portrait" src="assets/portrait.webp" alt="" onerror="this.remove()">
+      </div>
+      <div class="orbit" id="orbit" aria-hidden="true"></div>
       <div class="container hero__inner">
         <div class="hero__left">
           <p class="label">[ Відгуки ]</p>
@@ -43,8 +47,12 @@
       </div>
     </section>
 
-    <section class="section section--dark" aria-label="Відгуки">
+    <section class="section section--dark" aria-labelledby="all-rev">
       <div class="container">
+        <div class="section__head reveal">
+          <p class="label accent">[ Усі відгуки ]</p>
+          <h2 class="h2" id="all-rev">Читати без руху</h2>
+        </div>
         <div class="reviews" id="reviews-grid"></div>
       </div>
     </section>
