@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ProstoChess — індивідуальні заняття з шахів</title>
+  <meta name="description" content="Індивідуальні заняття з шахів для дорослих. Без зубріння і занудства. Безкоштовне пробне заняття, 30 хвилин.">
+  <meta name="theme-color" content="#000000">
+  <meta property="og:title" content="ProstoChess — закохую людей в шахи">
+  <meta property="og:description" content="Індивідуальні заняття з шахів для дорослих. Безкоштовне пробне заняття, 30 хвилин.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23ff5204'/%3E%3Ccircle cx='32' cy='20' r='9' fill='%23000'/%3E%3Cpath d='M25 31c0 11-4 17-9 22h32c-5-5-9-11-9-22z' fill='%23000'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Onest:wght@400;500;600;700&family=Unbounded:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">До змісту</a>
+
+  <header class="header">
+    <div class="container header__bar">
+      <a class="logo" href="index.html" aria-label="ProstoChess, на головну"><span class="logo__dot"></span>ProstoChess</a>
+      <nav class="nav" aria-label="Основна навігація">
+        <a class="nav__link" href="index.html" aria-current="page">Головна</a>
+        <a class="nav__link" href="about.html">Про мене</a>
+        <a class="nav__link" href="reviews.html">Відгуки</a>
+      </nav>
+      <a class="btn btn--white btn--sm header__cta" href="#trial" data-book>Пробне заняття <span class="btn__arrow">↗</span></a>
+      <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__word" aria-hidden="true">PROSTOCHESS</div>
+
+      <div class="hero__figure" aria-hidden="true">
+        <!-- Поклади сюди свій вирізаний портрет: assets/hero-portrait.png (PNG з прозорим фоном) -->
+        <img class="hero__portrait" src="assets/hero-portrait.png" alt="" onerror="this.remove()">
+        <svg class="hero__pawn" viewBox="0 0 200 280" aria-hidden="true">
+          <g fill="#000">
+            <circle cx="100" cy="58" r="34"/>
+            <rect x="64" y="94" width="72" height="14" rx="7"/>
+            <path d="M80 108C80 152 64 192 46 232H154C136 192 120 152 120 108Z"/>
+            <rect x="30" y="230" width="140" height="20" rx="10"/>
+            <rect x="18" y="248" width="164" height="30" rx="10"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="container hero__inner">
+        <div class="hero__left">
+          <p class="label">[ Індивідуальні заняття для дорослих ]</p>
+          <h1 class="h1" id="hero-title">Закохую людей в шахи</h1>
+        </div>
+
+        <div class="hero__right">
+          <p class="lead">Ніколи не грав? Грав у дитинстві й усе забув? Можна починати з будь-якого місця. Показую, як працює гра, і вона перестає здаватись складною.</p>
+          <a class="btn btn--white" href="#trial" data-book>Безкоштовне пробне заняття <span class="btn__arrow">↗</span></a>
+          <p class="hero__note">30 хв · безкоштовно</p>
+        </div>
+
+        <div class="hero__cards">
+          <div class="glass glass--solid">
+            <span class="glass__n">4+</span>
+            <span class="glass__t">роки тренерства</span>
+          </div>
+          <div class="glass">
+            <span class="glass__n">1:1</span>
+            <span class="glass__t">заняття індивідуально</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ФІЛОСОФІЯ -->
+    <section class="section section--light" id="philosophy" aria-labelledby="philosophy-title">
+      <div class="container philosophy">
+        <p class="label philosophy__label reveal">[ Філософія ]</p>
+        <h2 class="h2 philosophy__title reveal" id="philosophy-title">Шахи можуть бути цікавими навіть тим, хто <span class="accent">жодного разу не грав.</span></h2>
+        <p class="philosophy__text reveal">Я не змушую вчити дебюти напам'ять і не читаю лекції на годину. Ми сідаємо за дошку, граємо, а потім разом розбираємо, що щойно сталося. Так гра стає зрозумілою, а далі й цікавою.</p>
+
+        <div class="philosophy__chips reveal">
+          <div class="chips-row">
+            <span class="pill">Без зубріння</span>
+            <span class="pill">Без зайвої академічності</span>
+            <span class="pill">Без перевантажених пояснень</span>
+          </div>
+          <div class="chips-row">
+            <span class="pill pill--fill">Через практику</span>
+            <span class="pill pill--fill">Через реальні ігрові ситуації</span>
+            <span class="pill pill--fill">Через розуміння гри</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ЯК ПРОХОДИТЬ -->
+    <section class="section section--dark" aria-labelledby="steps-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="label accent">[ Як це проходить ]</p>
+          <h2 class="h2" id="steps-title">Чотири кроки, без сюрпризів</h2>
+        </div>
+        <div class="steps reveal">
+          <article class="step">
+            <span class="step__n">01 /</span>
+            <h3 class="step__t">Пробне заняття</h3>
+            <p class="step__d">30 хвилин, безкоштовно. Знайомимось, трохи граємо, я дивлюсь, з чого тобі найкраще починати.</p>
+            <span class="step__a">↗</span>
+          </article>
+          <article class="step">
+            <span class="step__n">02 /</span>
+            <h3 class="step__t">Твоя ціль</h3>
+            <p class="step__d">Обіграти друга, розібратись у грі, підготуватись до турніру. Кажеш, чого хочеш, і заняття будуються під це.</p>
+            <span class="step__a">↗</span>
+          </article>
+          <article class="step">
+            <span class="step__n">03 /</span>
+            <h3 class="step__t">Практика</h3>
+            <p class="step__d">Граємо партії й розбираємо моменти, де щось пішло не так. Теорії рівно стільки, скільки потрібно.</p>
+            <span class="step__a">↗</span>
+          </article>
+          <article class="step">
+            <span class="step__n">04 /</span>
+            <h3 class="step__t">Прогрес</h3>
+            <p class="step__d">Через кілька занять сам помічаєш різницю: розумієш, що робиш на дошці і навіщо.</p>
+            <span class="step__a">↗</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- КОМУ ПІДІЙДЕ -->
+    <section class="section section--light" aria-labelledby="whom-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="label accent-ink">[ Для кого ]</p>
+          <h2 class="h2" id="whom-title">Кому підійдуть заняття</h2>
+        </div>
+        <div class="rows reveal">
+          <div class="row">
+            <span class="row__n">01 /</span>
+            <h3 class="row__t">Ніколи не грав</h3>
+            <p class="row__d">Почнемо з того, як ходять фігури, і дуже швидко перейдемо до самої гри.</p>
+          </div>
+          <div class="row">
+            <span class="row__n">02 /</span>
+            <h3 class="row__t">Колись грав і забув</h3>
+            <p class="row__d">Згадаємо правила, а головне додамо розуміння, якого тоді не вистачало.</p>
+          </div>
+          <div class="row">
+            <span class="row__n">03 /</span>
+            <h3 class="row__t">Грає, але не росте</h3>
+            <p class="row__d">Знайдемо, де саме ти втрачаєш партії, і виправимо це.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ПРОБНЕ -->
+    <section class="section section--orange" id="trial" aria-labelledby="trial-title">
+      <div class="container trial">
+        <div class="trial__head reveal">
+          <p class="label">[ Пробне заняття ]</p>
+          <h2 class="h2" id="trial-title">Безкоштовне пробне заняття</h2>
+        </div>
+        <div class="trial__side reveal">
+          <p class="lead">Спробуй до того, як щось вирішувати. За 30 хвилин ти зрозумієш, чи тобі це підходить, а я зрозумію, з чого з тобою починати.</p>
+          <a class="btn btn--black" href="#trial" data-book>Записатись на пробне <span class="btn__arrow">↗</span></a>
+        </div>
+        <div class="trial__nums reveal">
+          <div class="num"><span class="num__v">30</span><span class="num__t label">хвилин пробного заняття</span></div>
+          <div class="num"><span class="num__v">0</span><span class="num__t label">гривень за пробне</span></div>
+          <div class="num"><span class="num__v">1:1</span><span class="num__t label">лише ти і я, без групи</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section--dark" aria-labelledby="faq-title">
+      <div class="container faq">
+        <div class="faq__head reveal">
+          <p class="label accent">[ Питання ]</p>
+          <h2 class="h2" id="faq-title">Те, що зазвичай питають</h2>
+        </div>
+        <div class="faq__list reveal">
+          <details class="qa">
+            <summary>Я зовсім не вмію грати. Це нормально?</summary>
+            <p>Так, багато хто приходить саме з цього. Пробне заняття для того й існує, щоб побачити, з чого починати саме тобі.</p>
+          </details>
+          <details class="qa">
+            <summary>Пробне заняття справді безкоштовне?</summary>
+            <p>Так. 30 хвилин, без оплати.</p>
+          </details>
+          <details class="qa">
+            <summary>Що буде на пробному?</summary>
+            <p>Познайомимось, ти розкажеш, чого хочеш від шахів, ми трохи пограємо, а потім я скажу, як би ми навчались далі.</p>
+          </details>
+          <details class="qa">
+            <summary>Мені вже далеко за 30. Не пізно?</summary>
+            <p>Не пізно. Дорослі навчаються інакше, ніж діти, і в цьому їхня перевага: вони розуміють, навіщо їм це.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ТИЗЕРИ -->
+    <section class="section section--dark" style="padding-top:0" aria-label="Більше про мене">
+      <div class="container teasers reveal">
+        <a class="teaser" href="about.html">
+          <div>
+            <p class="label accent">[ Про мене ]</p>
+            <h3 class="h2" style="margin-top:20px">Хто тебе вчитиме</h3>
+          </div>
+          <p class="teaser__d">Я Данііл: тренер, шахіст і людина, яка вміє пояснювати складне простими словами.</p>
+          <span class="teaser__a">↗</span>
+        </a>
+        <a class="teaser" href="reviews.html">
+          <div>
+            <p class="label accent">[ Відгуки ]</p>
+            <h3 class="h2" style="margin-top:20px">Що кажуть учні</h3>
+          </div>
+          <p class="teaser__d">Не вір мені на слово. Подивись, що пишуть ті, хто вже займався.</p>
+          <span class="teaser__a">↗</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ФІНАЛЬНИЙ CTA -->
+    <section class="section section--light" aria-labelledby="final-title">
+      <div class="container final reveal">
+        <h2 class="h2" id="final-title">Почнемо з однієї партії?</h2>
+        <a class="btn" href="#trial" data-book>Безкоштовне пробне, 30 хв <span class="btn__arrow">↗</span></a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <a class="logo" href="index.html"><span class="logo__dot" style="background:var(--orange)"></span>ProstoChess</a>
+        <nav class="footer__links label" aria-label="Підвал">
+          <a href="index.html">Головна</a>
+          <a href="about.html">Про мене</a>
+          <a href="reviews.html">Відгуки</a>
+          <a href="#trial" data-book>Записатись</a>
+        </nav>
+      </div>
+      <p class="footer__copy">© 2026 ProstoChess</p>
+    </div>
+    <div class="footer__word" aria-hidden="true">PROSTOCHESS</div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
