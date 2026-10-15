@@ -124,7 +124,7 @@ section { position: relative; padding: clamp(88px, 12vw, 180px) 0; }
 .hero-lead strong { color: var(--white); font-weight: 500; }
 .hero-bottom {
   position: absolute; z-index: 3; left: 0; right: 0; bottom: 0;
-  display: flex; justify-content: space-between; align-items: flex-end; gap: 16px;
+  display: flex; justify-content: flex-end; align-items: flex-end; gap: 16px;
   padding: 0 var(--pad) 28px;
 }
 .hero-bottom::before { content: ""; position: absolute; left: var(--pad); right: var(--pad); top: -26px; height: 1px; background: linear-gradient(90deg, var(--line), var(--line) 30%, transparent 40%, transparent 60%, var(--line) 70%); }
