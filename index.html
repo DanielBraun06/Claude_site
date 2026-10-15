@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Данііл Коваленко · індивідуальні заняття з шахів</title>
-<meta name="description" content="Індивідуальні заняття з шахів з Даніілом Коваленком. Закохую людей у шахи. 700 грн за годину.">
+<meta name="description" content="Заняття з шахів з Даніілом Коваленком: індивідуально, у парі або в міні-групі. Закохую людей у шахи. Пробне заняття безкоштовно.">
 <meta name="theme-color" content="#000000">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +27,7 @@
       <li class="mobile-only"><a href="#contacts" data-book>Записатися →</a></li>
     </ul>
   </nav>
-  <a href="#contacts" class="btn btn-white btn-try" data-book>Записатися</a>
+  <a href="#contacts" class="btn btn-white btn-try" data-book>Пробне заняття</a>
   <button class="burger" aria-label="Меню"><span></span><span></span></button>
 </header>
 
@@ -35,35 +35,32 @@
   <!-- ============ HERO ============ -->
   <section class="hero">
     <div class="hero-stage">
-      <canvas id="smoke" aria-hidden="true"></canvas>
       <h1 class="hero-title" aria-label="Закохую людей в шахи">
         <span class="l1"><i class="dash"></i>закохую людей<i class="dash"></i></span>
         <span class="l2">в шахи</span>
       </h1>
       <div class="hero-figure"><img class="hero-photo" src="assets/daniil.webp" alt="Данііл Коваленко, шаховий тренер" width="1209" height="1300" fetchpriority="high"></div>
 
-      <div class="hero-side">
-        <div class="tag"><i></i>Шаховий тренер · заняття 1 на 1</div>
-      </div>
       <div class="hero-mobile-cta">
-        <a href="#contacts" class="btn btn-orange" data-book>Записатися на заняття</a>
-        <a href="#lessons" class="btn btn-line">Як проходять</a>
+        <a href="#trial" class="btn btn-orange">Безкоштовне пробне заняття</a>
+        <a href="#pricing" class="btn btn-line">Формати і ціни</a>
       </div>
 
       <div class="hero-cta">
-        <a href="#contacts" class="btn btn-orange" data-book>Записатися на заняття
+        <a href="#trial" class="btn btn-orange">Безкоштовне пробне заняття
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></a>
-        <div class="price"><b>700 ₴</b> / година, 1 на 1</div>
+        <div class="price"><b>30 хвилин</b>, щоб познайомитися</div>
       </div>
 
       <div class="hero-bottom">
         <div class="chips">
           <span class="chip">Індивідуально</span>
-          <span class="chip">Діти й дорослі</span>
+          <span class="chip">У парі</span>
+          <span class="chip">Міні-група</span>
         </div>
         <div class="stats">
           <div class="stat"><b>4+</b><span>роки тренерства</span></div>
-          <div class="stat"><b>700₴</b><span>за годину заняття</span></div>
+          <div class="stat"><b>30 хв</b><span>пробне заняття безкоштовно</span></div>
         </div>
       </div>
     </div>
@@ -74,10 +71,10 @@
     <div class="wrap">
       <div class="head">
         <div>
-          <div class="eyebrow rv">Індивідуальні заняття</div>
+          <div class="eyebrow rv">Як я навчаю</div>
           <h2 class="h2 rv">Вся увага —<br><span class="dim">на твою гру.</span></h2>
         </div>
-        <p class="rv rv-d1">Не групова лекція, де ти один із двадцяти. Година, за яку ми розбираємо саме твої помилки і саме твої цілі.</p>
+        <p class="rv rv-d1">Займаємось так, щоб шахи були в радість, а прогрес було видно у твоїх партіях.</p>
       </div>
 
       <div class="features">
@@ -105,6 +102,21 @@
     </div>
   </section>
 
+  <!-- ============ TRIAL ============ -->
+  <section id="trial" class="trial">
+    <div class="wrap trial-in">
+      <div>
+        <div class="eyebrow rv">Пробне заняття</div>
+        <h2 class="h2 rv">30 хвилин<br>безкоштовно.</h2>
+      </div>
+      <div class="trial-text rv rv-d1">
+        <p>Запрошую тебе на пробне заняття. Познайомимось, зіграємо, я подивлюся на твій рівень і розкажу, як ми можемо рухатися далі. А ти зрозумієш, чи подобається тобі мій підхід.</p>
+        <a href="#contacts" class="btn btn-black" data-book>Записатися на пробне заняття
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></a>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ HOW IT WORKS ============ -->
   <section id="how">
     <div class="wrap">
@@ -117,8 +129,8 @@
       </div>
       <div class="steps">
         <div class="step rv"><div class="n">01</div><h3>Пишеш мені</h3><p>Коротко розказуєш, скільки граєш і чого хочеш досягти.</p></div>
-        <div class="step rv rv-d1"><div class="n">02</div><h3>Перше заняття</h3><p>Граємо й розбираємо, я дивлюсь на твій рівень і слабкі місця.</p></div>
-        <div class="step rv rv-d2"><div class="n">03</div><h3>План</h3><p>Складаю програму під твою ціль: від перших правил до підготовки до турнірів.</p></div>
+        <div class="step rv rv-d1"><div class="n">02</div><h3>Пробне заняття</h3><p>30 хвилин безкоштовно: граємо, розбираємо, я дивлюся на твій рівень і слабкі місця.</p></div>
+        <div class="step rv rv-d2"><div class="n">03</div><h3>Формат і план</h3><p>Обираємо формат: індивідуально, у парі чи в групі. Складаю програму під твою ціль.</p></div>
         <div class="step rv rv-d3"><div class="n">04</div><h3>Регулярні заняття</h3><p>Займаємось у зручному темпі, і прогрес видно у твоїх партіях.</p></div>
       </div>
     </div>
@@ -132,11 +144,11 @@
           <div class="eyebrow rv">Для кого</div>
           <h2 class="h2 rv">Кому <span class="dim">підійде.</span></h2>
         </div>
-        <p class="rv rv-d1">Вік і рейтинг не важливі. Важливо, щоб тобі хотілося грати краще.</p>
+        <p class="rv rv-d1">Рейтинг не важливий. Важливо, щоб тобі хотілося грати краще.</p>
       </div>
       <ul class="who">
         <li class="rv"><span class="who-n">01</span><span class="who-t">Починаєш з нуля <span>і хочеш розібратися нормально</span></span><svg class="who-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></li>
-        <li class="rv"><span class="who-n">02</span><span class="who-t">Дитина<span>, яку треба зацікавити, а не змусити</span></span><svg class="who-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></li>
+        <li class="rv"><span class="who-n">02</span><span class="who-t">Хочеш займатися з другом <span>або в компанії</span></span><svg class="who-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></li>
         <li class="rv"><span class="who-n">03</span><span class="who-t">Застряг на рейтингу <span>і не розумієш чому</span></span><svg class="who-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></li>
         <li class="rv"><span class="who-n">04</span><span class="who-t">Готуєшся до турніру <span>і хочеш грати впевнено</span></span><svg class="who-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></li>
       </ul>
@@ -149,27 +161,57 @@
       <div class="head">
         <div>
           <div class="eyebrow rv">Ціни</div>
-          <h2 class="h2 rv">Ціна<br><span class="dim">заняття.</span></h2>
+          <h2 class="h2 rv">Обери <span class="dim">свій<br>формат.</span></h2>
         </div>
-        <p class="rv rv-d1">Все просто: одна година, тільки ти, я і дошка.</p>
+        <p class="rv rv-d1">Індивідуально, у парі або в міні-групі. Почати можна з безкоштовного пробного заняття.</p>
       </div>
 
-      <div class="plans single">
-        <article class="plan featured rv">
-          <span class="badge">1 на 1</span>
+      <div class="plans">
+        <article class="plan rv">
+          <div class="ico-round"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="3.3"/><circle cx="16" cy="8" r="3.3"/><path d="M2 20a6 6 0 0 1 11-3.3M11 20a6 6 0 0 1 11 0"/></svg></div>
+          <h3>У парі</h3>
+          <p class="sub">Займаєшся разом з другом, партнером або колегою. Веселіше, і є з ким змагатися.</p>
+          <div class="price-big"><b>500 ₴</b><span>/ година</span></div>
+          <h4>Що входить</h4>
+          <ul>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="10" cy="10" r="8.3"/><path d="m6.5 10 2.4 2.4 4.6-4.8"/></svg>Заняття вдвох з тренером</li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="10" cy="10" r="8.3"/><path d="m6.5 10 2.4 2.4 4.6-4.8"/></svg>Партії й розбори між собою</li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="10" cy="10" r="8.3"/><path d="m6.5 10 2.4 2.4 4.6-4.8"/></svg>Простими словами, без лекцій</li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="10" cy="10" r="8.3"/><path d="m6.5 10 2.4 2.4 4.6-4.8"/></svg>Комфортний темп</li>
+          </ul>
+          <a href="#contacts" class="btn btn-card" data-book>Записатися</a>
+        </article>
+
+        <article class="plan featured rv rv-d1">
+          <span class="badge">Найшвидший прогрес</span>
           <div class="ico-round"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></div>
-          <h3>Індивідуальне заняття</h3>
+          <h3>Індивідуально</h3>
           <p class="sub">Година, коли вся увага на твоїй грі, твоїх помилках і твоїх цілях.</p>
           <div class="price-big"><b>700 ₴</b><span>/ година</span></div>
           <h4>Що входить</h4>
           <ul>
             <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="10" cy="10" r="8.3"/><path d="m6.5 10 2.4 2.4 4.6-4.8"/></svg>60 хвилин тільки з тобою</li>
             <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="10" cy="10" r="8.3"/><path d="m6.5 10 2.4 2.4 4.6-4.8"/></svg>Розбір твоїх власних партій</li>
-            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="10" cy="10" r="8.3"/><path d="m6.5 10 2.4 2.4 4.6-4.8"/></svg>Заняття в комфортному темпі</li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="10" cy="10" r="8.3"/><path d="m6.5 10 2.4 2.4 4.6-4.8"/></svg>Програма під твій рівень і ціль</li>
             <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="10" cy="10" r="8.3"/><path d="m6.5 10 2.4 2.4 4.6-4.8"/></svg>Складні ідеї простими словами</li>
           </ul>
           <a href="#contacts" class="btn btn-orange" data-book>Записатися на заняття
             <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></a>
+        </article>
+
+        <article class="plan rv rv-d2">
+          <div class="ico-round"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.2a5 5 0 0 1 5.5 4.8"/></svg></div>
+          <h3>Міні-група</h3>
+          <p class="sub">До 4 людей у групі. Регулярні заняття і живі суперники твого рівня.</p>
+          <div class="price-big"><b>2400 ₴</b><span>/ місяць</span></div>
+          <h4>Що входить</h4>
+          <ul>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="10" cy="10" r="8.3"/><path d="m6.5 10 2.4 2.4 4.6-4.8"/></svg>До 4 учнів у групі</li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="10" cy="10" r="8.3"/><path d="m6.5 10 2.4 2.4 4.6-4.8"/></svg>2 заняття на тиждень</li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="10" cy="10" r="8.3"/><path d="m6.5 10 2.4 2.4 4.6-4.8"/></svg>По 1 годині кожне</li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="10" cy="10" r="8.3"/><path d="m6.5 10 2.4 2.4 4.6-4.8"/></svg>Практика з суперниками</li>
+          </ul>
+          <a href="#contacts" class="btn btn-card" data-book>Записатися</a>
         </article>
       </div>
     </div>
@@ -189,8 +231,8 @@
         <p class="rv">Моя задача не в тому, щоб зробити з тебе ходячу енциклопедію дебютів. Я хочу, щоб тобі сподобалася сама гра. Коли подобається, займатися хочеться без нагадувань, і прогрес приходить сам.</p>
         <div class="facts rv">
           <div class="fact"><b>4<i>+</i></b><span>роки тренерства</span></div>
-          <div class="fact"><b>1<i>:</i>1</b><span>головний формат</span></div>
-          <div class="fact"><b>700<i>₴</i></b><span>за годину</span></div>
+          <div class="fact"><b>3</b><span>формати занять</span></div>
+          <div class="fact"><b>30<i>′</i></b><span>пробне безкоштовно</span></div>
         </div>
       </div>
     </div>
@@ -221,10 +263,10 @@
       </div>
       <div class="faq-list rv">
         <details open><summary>Я взагалі не вмію грати. Мені можна?<span class="pm"></span></summary><p>Так. Почнемо з правил і дуже швидко перейдемо до справжніх партій. Новачки часто прогресують найшвидше.</p></details>
-        <details><summary>Скільки коштує заняття?<span class="pm"></span></summary><p>Індивідуальне заняття — 700 грн за годину.</p></details>
-        <details><summary>Ви займаєтесь з дітьми?<span class="pm"></span></summary><p>Так, і з дітьми, і з дорослими. Підхід різний, але мета одна: щоб було цікаво і хотілося повернутися до дошки.</p></details>
+        <details><summary>Чи є пробне заняття?<span class="pm"></span></summary><p>Так, перше заняття безкоштовне і триває 30 хвилин. Познайомимось, зіграємо, і ти зрозумієш, чи підходить тобі мій формат.</p></details>
+        <details><summary>Чим відрізняються формати?<span class="pm"></span></summary><p>Індивідуально вся увага тільки на тобі. У парі ви займаєтесь удвох, а в міні-групі до 4 людей, двічі на тиждень по годині. Детальніше в розділі «Ціни».</p></details>
         <details><summary>Як часто треба займатися?<span class="pm"></span></summary><p>Залежить від цілі. Для помітного прогресу зазвичай вистачає одного-двох занять на тиждень плюс трохи практики між ними.</p></details>
-        <details><summary>Як записатися?<span class="pm"></span></summary><p>Натисни «Записатися» і напиши мені. Розкажи коротко про свій рівень і ціль, і підберемо зручний час.</p></details>
+        <details><summary>Як записатися?<span class="pm"></span></summary><p>Напиши мені в Telegram. Розкажи коротко про свій рівень і ціль, і підберемо час для безкоштовного пробного заняття.</p></details>
       </div>
     </div>
   </section>
@@ -234,11 +276,11 @@
     <div class="wrap">
       <div class="eyebrow rv">Записатися</div>
       <h2 class="h2 rv">Давай закохаю<br><span class="or">і тебе.</span></h2>
-      <p class="rv">Напиши мені, розкажи про свій рівень і ціль. Перше заняття покаже, з чого почати.</p>
+      <p class="rv">Запрошую на безкоштовне пробне заняття. 30 хвилин, і ти зрозумієш, з чого почати.</p>
       <div class="row rv">
-        <a href="#" class="btn btn-orange" data-book>Записатися на заняття
+        <a href="#" class="btn btn-orange" data-book>Записатися на пробне
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></a>
-        <a href="#pricing" class="btn btn-line">700 ₴ / година</a>
+        <a href="#pricing" class="btn btn-line">Формати і ціни</a>
       </div>
     </div>
   </section>

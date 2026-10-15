@@ -3,7 +3,7 @@
    ========================================================= */
 const CONFIG = {
   // Куди веде кнопка «Записатися» (наприклад, https://t.me/твій_нік)
-  bookingUrl: "",
+  bookingUrl: "https://t.me/dan_chess",
   // Посилання на соцмережі. Порожні показуються, але ведуть у нікуди.
   socials: {
     telegram: "https://t.me/prosto_chess",
@@ -20,7 +20,7 @@ const CONFIG = {
    shot (необов'язково, шлях до скріну переписки). */
 const REVIEWS = [
   { placeholder: true, name: "Ім'я учня", role: "Індивідуальні заняття", text: "Тут буде реальний відгук учня. Надішли тексти або скріни — і я їх сюди поставлю." },
-  { placeholder: true, name: "Ім'я учня", role: "Батьки учня", text: "Короткий відгук від батьків: що змінилося після занять, як дитина ставиться до шахів." },
+  { placeholder: true, name: "Ім'я учня", role: "Заняття в парі", text: "Короткий відгук: що змінилося після занять і як тепер ставишся до шахів." },
   { placeholder: true, name: "Ім'я учня", role: "Індивідуальні заняття", text: "Відгук про те, як змінилася гра: менше помилок, більше впевненості, більше задоволення." },
   { placeholder: true, name: "Ім'я учня", role: "Індивідуальні заняття", text: "Сюди добре лягає конкретика: був рейтинг такий, став такий, за стільки-то місяців." },
   { placeholder: true, name: "Ім'я учня", role: "Індивідуальні заняття", text: "Можна ставити не тільки текст, а й скрін переписки — він виглядає чесніше за будь-який опис." },
@@ -104,80 +104,3 @@ if (photo && !reduce && matchMedia("(min-width: 861px)").matches) {
     requestAnimationFrame(loop);
   })();
 }
-
-/* ---------------- orange smoke (WebGL) ---------------- */
-(function smoke() {
-  const canvas = document.getElementById("smoke");
-  if (!canvas) return;
-  const gl = canvas.getContext("webgl", { antialias: false, alpha: false, powerPreference: "low-power" });
-  if (!gl) { canvas.insertAdjacentHTML("afterend", '<div class="smoke-fallback"></div>'); return; }
-
-  const vs = "attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}";
-  const fs = `precision mediump float;
-uniform vec2 r;uniform float t;uniform float k;uniform vec2 c;
-float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
-float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);
- return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+vec2(1,1)),f.x),f.y);}
-float fbm(vec2 p){float v=0.,a=.5;mat2 R=mat2(.8,.6,-.6,.8);
- for(int i=0;i<5;i++){v+=a*n(p);p=R*p*2.03;a*=.5;}return v;}
-void main(){
- vec2 p=(gl_FragCoord.xy-.5*r)/r.y;
- float T=t*.045;
- vec2 q=vec2(fbm(p*1.5+vec2(0.,-T*2.2)),fbm(p*1.5+vec2(5.2,1.3)-vec2(T,T*1.6)));
- vec2 w=vec2(fbm(p*1.7+2.6*q+vec2(1.7,9.2)+T*1.3),fbm(p*1.7+2.6*q+vec2(8.3,2.8)-T));
- float f=fbm(p*1.3+2.8*w-vec2(0.,T*1.5));
- vec2 d=(p-c)*vec2(1.,.9);
- float m=exp(-dot(d,d)*1.1);
- float s=pow(smoothstep(.26,1.,f),2.3)*m*k;
- vec3 o=vec3(1.,.322,.016);
- vec3 col=o*s*1.35+vec3(1.,.62,.36)*pow(s,3.)*.35;
- gl_FragColor=vec4(max(col,0.),1.);}`;
-
-  const sh = (type, src) => { const s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s); return s; };
-  const prog = gl.createProgram();
-  gl.attachShader(prog, sh(gl.VERTEX_SHADER, vs));
-  gl.attachShader(prog, sh(gl.FRAGMENT_SHADER, fs));
-  gl.linkProgram(prog);
-  if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) { canvas.insertAdjacentHTML("afterend", '<div class="smoke-fallback"></div>'); return; }
-  gl.useProgram(prog);
-  const buf = gl.createBuffer();
-  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
-  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
-  const loc = gl.getAttribLocation(prog, "p");
-  gl.enableVertexAttribArray(loc);
-  gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
-  const uR = gl.getUniformLocation(prog, "r"), uT = gl.getUniformLocation(prog, "t");
-  const uK = gl.getUniformLocation(prog, "k"), uC = gl.getUniformLocation(prog, "c");
-
-  const scale = 0.5; // низька роздільність: дим м'який і легкий для ноутбука
-  const resize = () => {
-    const r = canvas.getBoundingClientRect();
-    canvas.width = Math.max(2, Math.round(r.width * scale));
-    canvas.height = Math.max(2, Math.round(r.height * scale));
-    gl.viewport(0, 0, canvas.width, canvas.height);
-  };
-  resize();
-  addEventListener("resize", resize);
-
-  // малюємо тільки коли перший екран видно
-  let visible = true;
-  new IntersectionObserver(([e]) => {
-    const was = visible; visible = e.isIntersecting && !document.hidden;
-    if (visible && !was) requestAnimationFrame(frame);
-  }).observe(canvas);
-  document.addEventListener("visibilitychange", () => {
-    if (!document.hidden && !visible) { visible = true; requestAnimationFrame(frame); }
-  });
-  const start = performance.now();
-  function frame(now) {
-    if (!visible) return;
-    gl.uniform2f(uR, canvas.width, canvas.height);
-    gl.uniform1f(uT, (now - start) / 1000 + 20);
-    gl.uniform1f(uK, 1.9);
-    gl.uniform2f(uC, 0, -0.05);
-    gl.drawArrays(gl.TRIANGLES, 0, 3);
-    if (!reduce) requestAnimationFrame(frame);
-  }
-  requestAnimationFrame(frame);
-  canvas.classList.add("on");
-})();
