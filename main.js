@@ -6,12 +6,12 @@ const CONFIG = {
   bookingUrl: "",
   // Посилання на соцмережі. Порожні показуються, але ведуть у нікуди.
   socials: {
-    telegram: "",
-    instagram: "",
-    threads: "",
-    tiktok: "",
-    youtube: "",
-    twitch: "",
+    telegram: "https://t.me/prosto_chess",
+    instagram: "https://www.instagram.com/daniil_chess/",
+    threads: "https://www.threads.com/@kovalenko_chess",
+    tiktok: "https://www.tiktok.com/@prostochessukr",
+    youtube: "https://www.youtube.com/@prostochessdanik",
+    twitch: "https://www.twitch.tv/prostochessdanik",
   },
 };
 
@@ -21,7 +21,7 @@ const CONFIG = {
 const REVIEWS = [
   { placeholder: true, name: "Ім'я учня", role: "Індивідуальні заняття", text: "Тут буде реальний відгук учня. Надішли тексти або скріни — і я їх сюди поставлю." },
   { placeholder: true, name: "Ім'я учня", role: "Батьки учня", text: "Короткий відгук від батьків: що змінилося після занять, як дитина ставиться до шахів." },
-  { placeholder: true, name: "Ім'я учня", role: "ProstoChess Club", text: "Відгук про клуб, групові заняття або турніри." },
+  { placeholder: true, name: "Ім'я учня", role: "Індивідуальні заняття", text: "Відгук про те, як змінилася гра: менше помилок, більше впевненості, більше задоволення." },
   { placeholder: true, name: "Ім'я учня", role: "Індивідуальні заняття", text: "Сюди добре лягає конкретика: був рейтинг такий, став такий, за стільки-то місяців." },
   { placeholder: true, name: "Ім'я учня", role: "Індивідуальні заняття", text: "Можна ставити не тільки текст, а й скрін переписки — він виглядає чесніше за будь-який опис." },
   { placeholder: true, name: "Ім'я учня", role: "Індивідуальні заняття", text: "Ще один відгук." },
@@ -126,13 +126,11 @@ void main(){
  vec2 q=vec2(fbm(p*1.5+vec2(0.,-T*2.2)),fbm(p*1.5+vec2(5.2,1.3)-vec2(T,T*1.6)));
  vec2 w=vec2(fbm(p*1.7+2.6*q+vec2(1.7,9.2)+T*1.3),fbm(p*1.7+2.6*q+vec2(8.3,2.8)-T));
  float f=fbm(p*1.3+2.8*w-vec2(0.,T*1.5));
- vec2 d=(p-c)*vec2(.8,1.15);
- float m=exp(-dot(d,d)*1.9);
- float side=exp(-pow(abs(p.x)-.95,2.)*4.)*smoothstep(.4,-.7,p.y)*.35;
- float s=pow(smoothstep(.32,1.,f),2.6)*(m+side)*k;
+ vec2 d=(p-c)*vec2(1.,.9);
+ float m=exp(-dot(d,d)*1.1);
+ float s=pow(smoothstep(.26,1.,f),2.3)*m*k;
  vec3 o=vec3(1.,.322,.016);
  vec3 col=o*s*1.35+vec3(1.,.62,.36)*pow(s,3.)*.35;
- col*=1.-.35*length(p*vec2(.7,1.));
  gl_FragColor=vec4(max(col,0.),1.);}`;
 
   const sh = (type, src) => { const s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s); return s; };
@@ -151,31 +149,32 @@ void main(){
   const uR = gl.getUniformLocation(prog, "r"), uT = gl.getUniformLocation(prog, "t");
   const uK = gl.getUniformLocation(prog, "k"), uC = gl.getUniformLocation(prog, "c");
 
-  const scale = 0.45; // рендеримо в низькій роздільності — дим м'який і легкий для ноутбука
+  const scale = 0.5; // низька роздільність: дим м'який і легкий для ноутбука
   const resize = () => {
-    canvas.width = Math.max(2, Math.round(innerWidth * scale));
-    canvas.height = Math.max(2, Math.round(innerHeight * scale));
+    const r = canvas.getBoundingClientRect();
+    canvas.width = Math.max(2, Math.round(r.width * scale));
+    canvas.height = Math.max(2, Math.round(r.height * scale));
     gl.viewport(0, 0, canvas.width, canvas.height);
   };
   resize();
   addEventListener("resize", resize);
 
-  const isHome = !!document.querySelector(".hero");
-  let k = 1, visible = true;
-  document.addEventListener("visibilitychange", () => { visible = !document.hidden; if (visible) requestAnimationFrame(frame); });
+  // малюємо тільки коли перший екран видно
+  let visible = true;
+  new IntersectionObserver(([e]) => {
+    const was = visible; visible = e.isIntersecting && !document.hidden;
+    if (visible && !was) requestAnimationFrame(frame);
+  }).observe(canvas);
+  document.addEventListener("visibilitychange", () => {
+    if (!document.hidden && !visible) { visible = true; requestAnimationFrame(frame); }
+  });
   const start = performance.now();
   function frame(now) {
     if (!visible) return;
-    const vh = innerHeight;
-    const prog = Math.min(1, window.scrollY / vh);
-    // на першому екрані дим сильніший, далі — тихий фон
-    const target = isHome ? 1.05 - prog * 0.6 : 0.55;
-    k += (target - k) * 0.08;
-    const cy = isHome ? -0.12 - prog * 0.25 : -0.35;
     gl.uniform2f(uR, canvas.width, canvas.height);
     gl.uniform1f(uT, (now - start) / 1000 + 20);
-    gl.uniform1f(uK, k);
-    gl.uniform2f(uC, 0, cy);
+    gl.uniform1f(uK, 1.9);
+    gl.uniform2f(uC, 0, -0.05);
     gl.drawArrays(gl.TRIANGLES, 0, 3);
     if (!reduce) requestAnimationFrame(frame);
   }
