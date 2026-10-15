@@ -15,16 +15,19 @@ const CONFIG = {
   },
 };
 
-/* Відгуки. Заміни заглушки реальними відгуками.
-   Поля: name, role (необов'язково), text, photo (необов'язково, шлях до аватарки),
-   shot (необов'язково, шлях до скріну переписки). */
+/* Відгуки — скріни реальних повідомлень. Щоб додати новий: поклади скрін у assets/reviews/
+   і допиши рядок сюди. text — це розшифровка скріну (для пошуку і людей з екранними читалками). */
 const REVIEWS = [
-  { placeholder: true, name: "Ім'я учня", role: "Індивідуальні заняття", text: "Тут буде реальний відгук учня. Надішли тексти або скріни — і я їх сюди поставлю." },
-  { placeholder: true, name: "Ім'я учня", role: "Заняття в парі", text: "Короткий відгук: що змінилося після занять і як тепер ставишся до шахів." },
-  { placeholder: true, name: "Ім'я учня", role: "Індивідуальні заняття", text: "Відгук про те, як змінилася гра: менше помилок, більше впевненості, більше задоволення." },
-  { placeholder: true, name: "Ім'я учня", role: "Індивідуальні заняття", text: "Сюди добре лягає конкретика: був рейтинг такий, став такий, за стільки-то місяців." },
-  { placeholder: true, name: "Ім'я учня", role: "Індивідуальні заняття", text: "Можна ставити не тільки текст, а й скрін переписки — він виглядає чесніше за будь-який опис." },
-  { placeholder: true, name: "Ім'я учня", role: "Індивідуальні заняття", text: "Ще один відгук." },
+  { shot: "assets/reviews/review-1.webp", source: "Threads · dm.varchuk",
+    text: "На просторах тредсу випадково знайшов заняття шахами для дорослих у @daniil_chess і це був метч. Я завжди любив стратегії і хотів спробувати шахи, але думав, що це нудно. Даня показав, що це не просто гра на заучування ходів, а що в шахах є магія. Дуже кайфове відчуття, коли ти довго тренуєшся, а потім робиш якийсь філігранний мув. Щиро раджу підтримати юного тренера і спробувати цю гру." },
+  { shot: "assets/reviews/review-2.webp", source: "Telegram",
+    text: "Даня, дякуємо Вам за заняття! Так цікаво було, що навіть молодший 5р захотів вчитись. Урок пройшов дуже швидко, син ще би грав далі, якби не закінчився час." },
+  { shot: "assets/reviews/review-3.webp", source: "Telegram",
+    text: "Мені сподобалось, інтерактивно, з теорією і самою грою. Для мене поки не просто, але сам факт що я вчусь крутий. А ще у вас гарно виходить навчати." },
+  { shot: "assets/reviews/review-4.webp", source: "Telegram",
+    text: "Дякую, Толік дуже зацікавлений та чекає кожен наступний урок, все мені переказує, що вивчив і про що дізнався." },
+  { shot: "assets/reviews/review-5.webp", source: "Telegram",
+    text: "Йому теж сподобалось) У вівторок і четвер на 18.00 вам зручно буде?" },
 ];
 
 /* ---------------- icons ---------------- */
@@ -53,20 +56,61 @@ if (socialsEl) {
   }).join("");
 }
 
-/* ---------------- reviews ---------------- */
+/* ---------------- reviews carousel ---------------- */
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const ARROW_L = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 5 8 12l7 7"/></svg>';
+const ARROW_R = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m9 5 7 7-7 7"/></svg>';
 document.querySelectorAll("[data-reviews]").forEach((el) => {
-  const limit = Number(el.dataset.reviews) || REVIEWS.length;
-  el.innerHTML = REVIEWS.slice(0, limit).map((r, i) => {
-    const initials = r.name.split(/\s+/).map((w) => w[0]).join("").slice(0, 2).toUpperCase();
-    return `<article class="review rv ${r.placeholder ? "placeholder" : ""}" style="transition-delay:${(i % 3) * 0.08}s">
-      <div class="q">“</div>
-      ${r.shot ? `<img class="shot" src="${esc(r.shot)}" alt="Скрін відгуку від ${esc(r.name)}" loading="lazy">` : ""}
-      <p>${esc(r.text)}</p>
-      <footer><div class="avatar">${r.photo ? `<img src="${esc(r.photo)}" alt="">` : esc(initials)}</div>
-      <div class="who-r"><b>${esc(r.name)}</b>${r.role ? `<span>${esc(r.role)}</span>` : ""}</div></footer>
-    </article>`;
-  }).join("");
+  el.classList.add("carousel");
+  el.innerHTML = `<div class="car-track" tabindex="0" aria-label="Відгуки учнів">${REVIEWS.map((r, i) => `
+      <figure class="car-slide" aria-label="Відгук ${i + 1} з ${REVIEWS.length}">
+        <div class="q">“</div>
+        <div class="shot-wrap"><img src="${esc(r.shot)}" alt="${esc(r.text)}" loading="lazy" draggable="false"></div>
+        <figcaption>${esc(r.source)}</figcaption>
+      </figure>`).join("")}</div>
+    <div class="car-nav">
+      <div class="car-dots">${REVIEWS.map((_, i) => `<button aria-label="Відгук ${i + 1}" data-i="${i}"></button>`).join("")}</div>
+      <div class="car-btns"><button class="car-prev" aria-label="Попередній відгук">${ARROW_L}</button><button class="car-next" aria-label="Наступний відгук">${ARROW_R}</button></div>
+    </div>`;
+  const track = el.querySelector(".car-track");
+  const slides = [...el.querySelectorAll(".car-slide")];
+  const dots = [...el.querySelectorAll(".car-dots button")];
+  const step = () => slides[0].getBoundingClientRect().width + parseFloat(getComputedStyle(track).columnGap || 16);
+  const current = () => Math.round(track.scrollLeft / step());
+  const go = (i) => track.scrollTo({ left: Math.max(0, Math.min(slides.length - 1, i)) * step(), behavior: "smooth" });
+  const sync = () => {
+    const i = current();
+    dots.forEach((d, k) => d.classList.toggle("on", k === i));
+    el.querySelector(".car-prev").disabled = track.scrollLeft < 4;
+    el.querySelector(".car-next").disabled = track.scrollLeft > track.scrollWidth - track.clientWidth - 4;
+  };
+  el.querySelector(".car-prev").addEventListener("click", () => go(current() - 1));
+  el.querySelector(".car-next").addEventListener("click", () => go(current() + 1));
+  dots.forEach((d) => d.addEventListener("click", () => go(+d.dataset.i)));
+  track.addEventListener("scroll", () => requestAnimationFrame(sync), { passive: true });
+  track.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight") { e.preventDefault(); go(current() + 1); }
+    if (e.key === "ArrowLeft") { e.preventDefault(); go(current() - 1); }
+  });
+  // перетягування мишкою на десктопі (на телефоні працює звичайний свайп)
+  let down = false, sx = 0, sl = 0, moved = false;
+  track.addEventListener("pointerdown", (e) => {
+    if (e.pointerType !== "mouse") return;
+    down = true; moved = false; sx = e.clientX; sl = track.scrollLeft;
+    track.classList.add("drag");
+  });
+  addEventListener("pointermove", (e) => {
+    if (!down) return;
+    const dx = e.clientX - sx; if (Math.abs(dx) > 3) moved = true;
+    track.scrollLeft = sl - dx;
+  });
+  addEventListener("pointerup", () => {
+    if (!down) return;
+    down = false; track.classList.remove("drag");
+    if (moved) go(current());
+  });
+  addEventListener("resize", sync);
+  sync();
 });
 
 /* ---------------- nav ---------------- */
