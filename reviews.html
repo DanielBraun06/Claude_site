@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Відгуки — ProstoChess</title>
+<meta name="description" content="Індивідуальні заняття з шахів з Даніілом Коваленком. Закохую людей у шахи. 700 грн за годину.">
+<meta name="theme-color" content="#000000">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<canvas id="smoke" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav">
+  <a href="index.html" class="logo" aria-label="ProstoChess, на головну">prosto<b>chess</b></a>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html#top">Головна</a></li>
+      <li><a href="index.html#lessons">Заняття</a></li>
+      <li><a href="index.html#pricing">Ціни</a></li>
+      <li><a href="index.html#about">Про мене</a></li>
+      <li><a href="reviews.html" class="active">Відгуки</a></li>
+      <li><a href="index.html#contacts">Контакти</a></li>
+      <li class="mobile-only"><a href="index.html#contacts" data-book>Записатися →</a></li>
+    </ul>
+  </nav>
+  <a href="index.html#contacts" class="btn btn-white btn-try" data-book>Записатися</a>
+  <button class="burger" aria-label="Меню"><span></span><span></span></button>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="eyebrow rv">Відгуки</div>
+      <h1 class="h2 rv">Відгуки<br><span class="dim">моїх учнів.</span></h1>
+      <p class="rv">Що кажуть люди після занять: учні, їхні батьки й учасники ProstoChess Club.</p>
+    </div>
+  </section>
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="reviews-grid" data-reviews></div>
+    </div>
+  </section>
+  <section class="final" id="contacts">
+    <div class="wrap">
+      <div class="eyebrow rv">Твоя черга</div>
+      <h2 class="h2 rv">Наступний відгук<br><span class="or">може бути твій.</span></h2>
+      <p class="rv">Індивідуальні заняття з шахів, 700 грн за годину. Напиши, і підберемо час.</p>
+      <div class="row rv">
+        <a href="#" class="btn btn-orange" data-book>Записатися на заняття
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></a>
+        <a href="index.html#pricing" class="btn btn-line">Ціни та формати</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer" id="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <div class="logo">prosto<b>chess</b></div>
+        <p>Індивідуальні заняття з шахів, клуб і спільнота. Закохую людей у шахи.</p>
+      </div>
+      <div class="socials" data-socials></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 ProstoChess · Данііл Коваленко</span>
+      <span><a href="index.html">Головна</a> · <a href="reviews.html">Відгуки</a> · <a href="index.html#pricing">Ціни</a></span>
+    </div>
+    <div class="footer-word" aria-hidden="true">prostochess</div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

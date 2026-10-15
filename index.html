@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ProstoChess — Данііл Коваленко</title>
+<meta name="description" content="Індивідуальні заняття з шахів з Даніілом Коваленком. Закохую людей у шахи. 700 грн за годину.">
+<meta name="theme-color" content="#000000">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<canvas id="smoke" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav">
+  <a href="index.html" class="logo" aria-label="ProstoChess, на головну">prosto<b>chess</b></a>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="#top" class="active">Головна</a></li>
+      <li><a href="#lessons">Заняття</a></li>
+      <li><a href="#pricing">Ціни</a></li>
+      <li><a href="#about">Про мене</a></li>
+      <li><a href="reviews.html">Відгуки</a></li>
+      <li><a href="#contacts">Контакти</a></li>
+      <li class="mobile-only"><a href="#contacts" data-book>Записатися →</a></li>
+    </ul>
+  </nav>
+  <a href="#contacts" class="btn btn-white btn-try" data-book>Записатися</a>
+  <button class="burger" aria-label="Меню"><span></span><span></span></button>
+</header>
+
+<main id="top">
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero-stage">
+      <h1 class="hero-title" aria-label="Закохую людей в шахи">
+        <span class="l1"><i class="dash"></i>закохую людей<i class="dash"></i></span>
+        <span class="l2">в шахи</span>
+      </h1>
+      <img class="hero-photo" src="assets/daniil.webp" alt="Данііл Коваленко, шаховий тренер" width="1209" height="1300" fetchpriority="high">
+
+      <div class="hero-side">
+        <div class="tag"><i></i>Шаховий тренер · ProstoChess</div>
+      </div>
+      <p class="hero-lead"><strong>Індивідуальні заняття з шахів</strong>, після яких хочеться грати ще. Пояснюю просто, без зайвої академічності, і тільки те, що реально працює у твоїх партіях.</p>
+      <div class="hero-mobile-cta">
+        <a href="#contacts" class="btn btn-orange" data-book>Записатися на заняття</a>
+        <a href="#lessons" class="btn btn-line">Як проходять</a>
+      </div>
+
+      <div class="hero-cta">
+        <a href="#contacts" class="btn btn-orange" data-book>Записатися на заняття
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></a>
+        <div class="price"><b>700 ₴</b> / година, 1 на 1</div>
+      </div>
+
+      <div class="hero-bottom">
+        <div class="chips">
+          <span class="chip">Індивідуально</span>
+          <span class="chip">Діти й дорослі</span>
+        </div>
+        <div class="stats">
+          <div class="stat"><b>4+</b><span>роки тренерства</span></div>
+          <div class="stat"><b>700₴</b><span>за годину заняття</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHY 1:1 ============ -->
+  <section id="lessons">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <div class="eyebrow rv">Індивідуальні заняття</div>
+          <h2 class="h2 rv">Вся увага —<br><span class="dim">на твою гру.</span></h2>
+        </div>
+        <p class="rv rv-d1">Не групова лекція, де ти один із двадцяти. Година, за яку ми розбираємо саме твої помилки і саме твої цілі.</p>
+      </div>
+
+      <div class="features">
+        <article class="feature rv">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg></div>
+          <h3>План під<br>твій рівень</h3>
+          <p>Починаємо з того, де ти зараз, а не з першої сторінки підручника. Новачок і гравець з рейтингом 1800 займаються по-різному.</p>
+        </article>
+        <article class="feature rv rv-d1">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></div>
+          <h3>Розбір твоїх<br>партій</h3>
+          <p>Дивимось, де саме губляться очки, і закриваємо ці дірки, замість того щоб вчити все підряд.</p>
+        </article>
+        <article class="feature rv rv-d2">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-5A8 8 0 1 1 21 12Z"/></svg></div>
+          <h3>Простою<br>мовою</h3>
+          <p>Пояснюю шахи так, щоб було зрозуміло з першого разу. Без складних термінів заради складних термінів.</p>
+        </article>
+        <article class="feature rv">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2V5Z"/><path d="M4 19a2 2 0 0 1 2-2h13"/></svg></div>
+          <h3>Дебюти без<br>зубріння</h3>
+          <p>Будуємо репертуар, який ти розумієш, а не просто запам'ятовуєш ходи і губишся на восьмому.</p>
+        </article>
+        <article class="feature rv rv-d1">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></div>
+          <h3>Тактика<br>і мислення</h3>
+          <p>Вчимося бачити ідеї на дошці й рахувати варіанти спокійно, без паніки і зевків в один хід.</p>
+        </article>
+        <article class="feature rv rv-d2">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17 9 11l4 4 8-8"/><path d="M15 7h6v6"/></svg></div>
+          <h3>Видимий<br>прогрес</h3>
+          <p>Ти бачиш, що змінилося: менше зевків, впевненіші дебюти, перемоги над тими, кому раніше програвав.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS ============ -->
+  <section id="how">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <div class="eyebrow rv">Як це працює</div>
+          <h2 class="h2 rv">Від першого<br><span class="dim">повідомлення.</span></h2>
+        </div>
+        <p class="rv rv-d1">Чотири кроки, і ти вже займаєшся за планом, а не навмання.</p>
+      </div>
+      <div class="steps">
+        <div class="step rv"><div class="n">01</div><h3>Пишеш мені</h3><p>Коротко розказуєш, скільки граєш і чого хочеш досягти.</p></div>
+        <div class="step rv rv-d1"><div class="n">02</div><h3>Перше заняття</h3><p>Граємо й розбираємо, я дивлюсь на твій рівень і слабкі місця.</p></div>
+        <div class="step rv rv-d2"><div class="n">03</div><h3>План</h3><p>Складаю програму під твою ціль: від перших правил до підготовки до турнірів.</p></div>
+        <div class="step rv rv-d3"><div class="n">04</div><h3>Регулярні заняття</h3><p>Займаємось у зручному темпі, і прогрес видно у твоїх партіях.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOR WHOM ============ -->
+  <section id="who">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <div class="eyebrow rv">Для кого</div>
+          <h2 class="h2 rv">Кому <span class="dim">підійде.</span></h2>
+        </div>
+        <p class="rv rv-d1">Вік і рейтинг не важливі. Важливо, щоб тобі хотілося грати краще.</p>
+      </div>
+      <ul class="who">
+        <li class="rv"><span class="who-n">01</span><span class="who-t">Починаєш з нуля <span>і хочеш розібратися нормально</span></span><svg class="who-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></li>
+        <li class="rv"><span class="who-n">02</span><span class="who-t">Дитина<span>, яку треба зацікавити, а не змусити</span></span><svg class="who-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></li>
+        <li class="rv"><span class="who-n">03</span><span class="who-t">Застряг на рейтингу <span>і не розумієш чому</span></span><svg class="who-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></li>
+        <li class="rv"><span class="who-n">04</span><span class="who-t">Готуєшся до турніру <span>і хочеш грати впевнено</span></span><svg class="who-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ PRICING ============ -->
+  <section id="pricing">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <div class="eyebrow rv">Ціни</div>
+          <h2 class="h2 rv">Обери <span class="dim">свій<br>формат.</span></h2>
+        </div>
+        <p class="rv rv-d1">Найшвидший прогрес дають індивідуальні заняття. А якщо хочеш грати разом з іншими, є клуб.</p>
+      </div>
+
+      <div class="plans">
+        <article class="plan rv">
+          <div class="ico-round"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.2a5 5 0 0 1 5.5 4.8"/></svg></div>
+          <h3>ProstoChess Club</h3>
+          <p class="sub">Підписка для тих, хто хоче грати й рости разом зі спільнотою.</p>
+          <div class="price-big text"><b>Підписка</b><span>/ місяць</span></div>
+          <h4>Що всередині</h4>
+          <ul>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="10" cy="10" r="8.3"/><path d="m6.5 10 2.4 2.4 4.6-4.8"/></svg>Групові заняття</li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="10" cy="10" r="8.3"/><path d="m6.5 10 2.4 2.4 4.6-4.8"/></svg>Навчальний контент</li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="10" cy="10" r="8.3"/><path d="m6.5 10 2.4 2.4 4.6-4.8"/></svg>Закритий чат клубу</li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="10" cy="10" r="8.3"/><path d="m6.5 10 2.4 2.4 4.6-4.8"/></svg>Турніри для учасників</li>
+          </ul>
+          <a href="#contacts" class="btn btn-card" data-book>Дізнатися умови</a>
+        </article>
+
+        <article class="plan featured rv rv-d1">
+          <span class="badge">Головне</span>
+          <div class="ico-round"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></div>
+          <h3>Індивідуально</h3>
+          <p class="sub">Заняття 1 на 1. Максимальна увага до твоєї гри і план під твою ціль.</p>
+          <div class="price-big"><b>700 ₴</b><span>/ година</span></div>
+          <h4>Що входить</h4>
+          <ul>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="10" cy="10" r="8.3"/><path d="m6.5 10 2.4 2.4 4.6-4.8"/></svg>60 хвилин тільки з тобою</li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="10" cy="10" r="8.3"/><path d="m6.5 10 2.4 2.4 4.6-4.8"/></svg>Діагностика рівня на першому занятті</li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="10" cy="10" r="8.3"/><path d="m6.5 10 2.4 2.4 4.6-4.8"/></svg>Програма під твій рівень і ціль</li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="10" cy="10" r="8.3"/><path d="m6.5 10 2.4 2.4 4.6-4.8"/></svg>Розбір твоїх власних партій</li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="10" cy="10" r="8.3"/><path d="m6.5 10 2.4 2.4 4.6-4.8"/></svg>Дебюти, тактика, ендшпіль — що потрібно саме тобі</li>
+          </ul>
+          <a href="#contacts" class="btn btn-outline-orange" data-book>Записатися на заняття</a>
+        </article>
+
+        <article class="plan rv rv-d2">
+          <div class="ico-round"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4Z"/><path d="M7 6H4v1a3 3 0 0 0 3 3M17 6h3v1a3 3 0 0 1-3 3"/></svg></div>
+          <h3>Турніри</h3>
+          <p class="sub">Турніри й шахові події ProstoChess для учнів і спільноти.</p>
+          <div class="price-big text"><b>Події</b><span>/ анонси в соцмережах</span></div>
+          <h4>Навіщо</h4>
+          <ul>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="10" cy="10" r="8.3"/><path d="m6.5 10 2.4 2.4 4.6-4.8"/></svg>Практика з живими суперниками</li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="10" cy="10" r="8.3"/><path d="m6.5 10 2.4 2.4 4.6-4.8"/></svg>Перевірка того, що вивчив</li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="10" cy="10" r="8.3"/><path d="m6.5 10 2.4 2.4 4.6-4.8"/></svg>Атмосфера і ком'юніті</li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="10" cy="10" r="8.3"/><path d="m6.5 10 2.4 2.4 4.6-4.8"/></svg>Анонси в Telegram</li>
+          </ul>
+          <a href="#contacts" class="btn btn-card">Слідкувати за анонсами</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about">
+    <div class="wrap about">
+      <div class="about-photo rv">
+        <img src="assets/daniil.webp" alt="Данііл Коваленко" loading="lazy" width="1209" height="1300">
+        <span class="stamp">Данііл Коваленко</span>
+      </div>
+      <div class="about-text">
+        <div class="eyebrow rv">Про мене</div>
+        <h2 class="h2 rv">Привіт,<br><span class="dim">я Данііл.</span></h2>
+        <p class="rv">Граю в шахи багато років і вже <strong>понад 4 роки треную інших</strong> — індивідуально і в групах. Створив <strong>ProstoChess</strong>: школу, клуб і спільноту людей, яким шахи не байдужі.</p>
+        <p class="rv">Моя задача не в тому, щоб зробити з тебе ходячу енциклопедію дебютів. Я хочу, щоб тобі сподобалася сама гра. Коли подобається, займатися хочеться без нагадувань, і прогрес приходить сам.</p>
+        <div class="facts rv">
+          <div class="fact"><b>4<i>+</i></b><span>роки тренерства</span></div>
+          <div class="fact"><b>1<i>:</i>1</b><span>головний формат</span></div>
+          <div class="fact"><b>Club</b><span>ProstoChess спільнота</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REVIEWS TEASER ============ -->
+  <section id="reviews">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <div class="eyebrow rv">Відгуки</div>
+          <h2 class="h2 rv">Що кажуть<br><span class="dim">учні.</span></h2>
+        </div>
+        <p class="rv rv-d1">Без прикрас: реальні слова людей, які займаються зі мною.</p>
+      </div>
+      <div class="reviews-grid" data-reviews="3"></div>
+      <div class="more-row"><a href="reviews.html" class="btn btn-line">Усі відгуки
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></a></div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section id="faq">
+    <div class="wrap faq">
+      <div>
+        <div class="eyebrow rv">Питання</div>
+        <h2 class="h2 rv">Часті<br><span class="dim">питання.</span></h2>
+      </div>
+      <div class="faq-list rv">
+        <details open><summary>Я взагалі не вмію грати. Мені можна?<span class="pm"></span></summary><p>Так. Почнемо з правил і дуже швидко перейдемо до справжніх партій. Новачки часто прогресують найшвидше.</p></details>
+        <details><summary>Скільки коштує заняття?<span class="pm"></span></summary><p>Індивідуальне заняття — 700 грн за годину.</p></details>
+        <details><summary>Ви займаєтесь з дітьми?<span class="pm"></span></summary><p>Так, і з дітьми, і з дорослими. Підхід різний, але мета одна: щоб було цікаво і хотілося повернутися до дошки.</p></details>
+        <details><summary>Як часто треба займатися?<span class="pm"></span></summary><p>Залежить від цілі. Для помітного прогресу зазвичай вистачає одного-двох занять на тиждень плюс трохи практики між ними.</p></details>
+        <details><summary>Як записатися?<span class="pm"></span></summary><p>Натисни «Записатися» і напиши мені. Розкажи коротко про свій рівень і ціль, і підберемо зручний час.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA ============ -->
+  <section class="final" id="contacts">
+    <div class="wrap">
+      <div class="eyebrow rv">Записатися</div>
+      <h2 class="h2 rv">Давай закохаю<br><span class="or">і тебе.</span></h2>
+      <p class="rv">Напиши мені, розкажи про свій рівень і ціль. Перше заняття покаже, з чого почати.</p>
+      <div class="row rv">
+        <a href="#" class="btn btn-orange" data-book>Записатися на заняття
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></a>
+        <a href="#pricing" class="btn btn-line">700 ₴ / година</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer" id="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <div class="logo">prosto<b>chess</b></div>
+        <p>Індивідуальні заняття з шахів, клуб і спільнота. Закохую людей у шахи.</p>
+      </div>
+      <div class="socials" data-socials></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 ProstoChess · Данііл Коваленко</span>
+      <span><a href="index.html">Головна</a> · <a href="reviews.html">Відгуки</a> · <a href="#pricing">Ціни</a></span>
+    </div>
+    <div class="footer-word" aria-hidden="true">prostochess</div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
